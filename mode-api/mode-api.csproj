@@ -1,0 +1,89 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>mode_api</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Contracts\" />
+    <Folder Include="Controllers\Confederates\" />
+    <Folder Include="Controllers\Confederates\BattleLanguage\" />
+    <Folder Include="Contracts\Common\" />
+    <Folder Include="Contracts\Confederates\" />
+    <Folder Include="Contracts\Confederates\BattleLanguage\" />
+    <Folder Include="Contracts\Confederates\BattleLanguage\ModeDetail\" />
+    <Folder Include="Contracts\Mode\" />
+    <Folder Include="Contracts\Confederates\BattleLanguage\ContextDetail\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\Confederates\" />
+    <Folder Include="Services\Confederates\BattleLanguage\" />
+    <Folder Include="DomainModel\" />
+    <Folder Include="DomainModel\Confederates\" />
+    <Folder Include="DomainModel\Confederates\BattleLanguage\" />
+    <Folder Include="DomainModel\Common\" />
+    <Folder Include="Contracts\Confederates\TTApp\" />
+    <Folder Include="Contracts\Confederates\TTApp\TT\" />
+    <Folder Include="Contracts\Confederates\TTApp\TT\Request\" />
+    <Folder Include="Contracts\Confederates\TTApp\TT\Response\" />
+    <Folder Include="Controllers\Confederates\TTApp\" />
+    <Folder Include="DomainModel\Confederates\TTApp\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Contracts\Confederates\TTApp\TT\TT.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TT.cs</LastGenOutput>
+    </None>
+    <None Update="Contracts\Confederates\TTApp\TT\Request\TTSearchCriteria.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TTSearchCriteria.cs</LastGenOutput>
+    </None>
+    <None Update="Contracts\Confederates\TTApp\TT\Response\TTSearchCriteria.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TTResponse.cs</LastGenOutput>
+    </None>
+    <None Update="Contracts\Confederates\TTApp\TT\ITTService.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ITTService.cs</LastGenOutput>
+    </None>
+    <None Update="Controllers\Confederates\TTApp\TTController.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TTController.cs</LastGenOutput>
+    </None>
+    <None Update="DomainModel\Confederates\TTApp\TT.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TT.cs</LastGenOutput>
+    </None>
+    <None Update="DomainModel\Confederates\TTApp\TTDto.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TTDto.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Contracts\Confederates\TTApp\TT\TT.cs">
+      <DependentUpon>TT.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Contracts\Confederates\TTApp\TT\Request\TTSearchCriteria.cs">
+      <DependentUpon>TTSearchCriteria.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Contracts\Confederates\TTApp\TT\Response\TTSearchCriteria.cs">
+      <DependentUpon>TTResponse.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Contracts\Confederates\TTApp\TT\ITTService.cs">
+      <DependentUpon>ITTService.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Controllers\Confederates\TTApp\TTController.cs">
+      <DependentUpon>TTController.tt</DependentUpon>
+    </Compile>
+    <Compile Update="DomainModel\Confederates\TTApp\TT.cs">
+      <DependentUpon>TT.tt</DependentUpon>
+    </Compile>
+    <Compile Update="DomainModel\Confederates\TTApp\TTDto.cs">
+      <DependentUpon>TTDto.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>
