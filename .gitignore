@@ -386,3 +386,4 @@ FodyWeavers.xsd
 # JetBrains Rider
 .idea/
 *.sln.iml
+platonic/mode-platonic-api/obj/Debug/net5.0/mode-platonic-api.csproj.AssemblyReference.cache
