@@ -21,13 +21,14 @@ function Get-Items {
 }
 
 [hashtable]$replacements = New-Object system.collections.hashtable
-$replacements."modeDetailPlatonic" = "contextDetail"; 
-$replacements."ModeDetailPlatonic" = "ContextDetail"; 
+$replacements."modeDetailPlatonic" = "modeDetail"; 
+$replacements."ModeDetailPlatonic" = "ModeDetail"; 
 $replacements."NamePlatonic" = "Name";
 $replacements."namePlatonic" = "name";
-$replacements."mode-detail-platonic" = "context-detail";
-$replacements."mode_detail_platonic" = "context_detail";
+$replacements."mode-detail-platonic" = "mode-detail";
+$replacements."mode_detail_platonic" = "mode_detail";
 $replacements."BattleLanguagePlatonic" = "BattleLanguage";
+$replacements."mode-platonic-api" = "mode-api";
  
 
 foreach ($file in Get-Files)
