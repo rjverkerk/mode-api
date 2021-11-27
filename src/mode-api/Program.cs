@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using mode_platonic_api.Common;
-using mode_platonic_api.data.Repositories.Confederates.BattleLanguage;
-using mode_platonic_api.Services.Confederates.BattleLanguage;
+using mode_api.Common;
+using mode_api.data.Repositories.Confederates.BattleLanguage;
+using mode_api.Services.Confederates.BattleLanguage;
 
-namespace mode_platonic_api
+namespace mode_api
 {
     public class Program
     {

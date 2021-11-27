@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace mode_platonic_api.Domain.DomainModel.Common
+namespace mode_api.Domain.DomainModel.Common
 {
     public class AggregateRoot
     {

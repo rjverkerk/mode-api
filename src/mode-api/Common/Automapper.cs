@@ -1,6 +1,6 @@
 using AutoMapper;
-using mode_platonic_api.Contracts.Confederates.BattleLanguage.ModeDetail;
-using mode_platonic_api.Domain.DomainModel.Confederates.BattleLanguage;
+using mode_api.Contracts.Confederates.BattleLanguage.ModeDetail;
+using mode_api.Domain.DomainModel.Confederates.BattleLanguage;
 
 public class AutoMapping : Profile
 {

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>mode_platonic_api</RootNamespace>
+    <RootNamespace>mode_api</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

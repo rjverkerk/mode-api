@@ -5,9 +5,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using mode_platonic_api.Domain;
+using mode_api.Domain;
 
-namespace mode_platonic_api
+namespace mode_api
 {
     public class Startup
     {
@@ -25,7 +25,7 @@ namespace mode_platonic_api
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "mode_platonic_api", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "mode_api", Version = "v1" });
             });
 
             services.AddAutoMapper(typeof(Startup));
@@ -42,7 +42,7 @@ namespace mode_platonic_api
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "mode_platonic_api v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "mode_api v1"));
             }
 
             app.UseHttpsRedirection();

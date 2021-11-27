@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using mode_platonic_api.Contracts.Confederates.BattleLanguage.ModeDetail;
-using mode_platonic_api.Services.Confederates.BattleLanguage;
-namespace mode_platonic_api.Controllers.Confederates.BattleLanguage 
+using mode_api.Contracts.Confederates.BattleLanguage.ModeDetail;
+using mode_api.Services.Confederates.BattleLanguage;
+namespace mode_api.Controllers.Confederates.BattleLanguage 
 {
     [ApiController]
     [Route("mode-detail")] 

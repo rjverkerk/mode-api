@@ -1,4 +1,4 @@
-namespace mode_platonic_api.Common
+namespace mode_api.Common
 {
     public class MockRequestContext : IRequestContext
     {

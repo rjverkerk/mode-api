@@ -1,15 +1,15 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using mode_platonic_api.Common;
-using mode_platonic_api.Contracts.Confederates.BattleLanguage.ModeDetail;
-using mode_platonic_api.data.Repositories.Confederates.BattleLanguage;
-using mode_platonic_api.Domain.DomainModel.Confederates.BattleLanguage;
+using mode_api.Common;
+using mode_api.Contracts.Confederates.BattleLanguage.ModeDetail;
+using mode_api.data.Repositories.Confederates.BattleLanguage;
+using mode_api.Domain.DomainModel.Confederates.BattleLanguage;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace mode_platonic_api.Services.Confederates.BattleLanguage
+namespace mode_api.Services.Confederates.BattleLanguage
 {
     public class ModeDetailService : IModeDetailService
     {
