@@ -1,6 +1,6 @@
 using FluentMigrator;
 
-namespace mode_platonic_api.data
+namespace mode_api.data
 {
     [Migration(1)]
     public class CreateTables : ForwardOnlyMigration

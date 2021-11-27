@@ -1,9 +1,9 @@
-using mode_platonic_api.Contracts.Confederates.BattleLanguage.ModeDetail;
+using mode_api.Contracts.Confederates.BattleLanguage.ModeDetail;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace mode_platonic_api.Services.Confederates.BattleLanguage
+namespace mode_api.Services.Confederates.BattleLanguage
 {
     public interface IModeDetailService
     {

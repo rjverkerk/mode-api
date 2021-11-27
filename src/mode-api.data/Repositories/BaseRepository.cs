@@ -1,13 +1,13 @@
 using Microsoft.EntityFrameworkCore;
-using mode_platonic_api.Domain;
-using mode_platonic_api.Domain.DomainModel.Common;
+using mode_api.Domain;
+using mode_api.Domain.DomainModel.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace mode_platonic_api.data.Repositories
+namespace mode_api.data.Repositories
 {
     public class BaseRepository<T> : IBaseRepository<T> where T : AggregateRoot
     {

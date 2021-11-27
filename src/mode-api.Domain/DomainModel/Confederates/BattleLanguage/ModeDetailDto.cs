@@ -1,6 +1,6 @@
 using System;
 
-namespace mode_platonic_api.Domain.DomainModel.Confederates.BattleLanguage
+namespace mode_api.Domain.DomainModel.Confederates.BattleLanguage
 {
     public class ModeDetailDto
     {

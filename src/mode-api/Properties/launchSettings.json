@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "mode_platonic_api": {
+    "mode_api": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

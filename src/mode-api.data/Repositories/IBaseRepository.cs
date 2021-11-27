@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace mode_platonic_api.data.Repositories
+namespace mode_api.data.Repositories
 {
     public interface IBaseRepository<T> : IDisposable where T : class
     {

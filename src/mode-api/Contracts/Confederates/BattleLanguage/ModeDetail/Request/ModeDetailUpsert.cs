@@ -1,4 +1,4 @@
-namespace mode_platonic_api.Contracts.Confederates.BattleLanguage.ModeDetail
+namespace mode_api.Contracts.Confederates.BattleLanguage.ModeDetail
 {
     public class ModeDetailUpsert
     {

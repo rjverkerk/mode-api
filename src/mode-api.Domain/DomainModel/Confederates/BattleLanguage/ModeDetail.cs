@@ -1,8 +1,8 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
-using mode_platonic_api.Domain.DomainModel.Common;
+using mode_api.Domain.DomainModel.Common;
 
-namespace mode_platonic_api.Domain.DomainModel.Confederates.BattleLanguage
+namespace mode_api.Domain.DomainModel.Confederates.BattleLanguage
 {
     [Table("mode_detail")]
     public class ModeDetail : AggregateRoot

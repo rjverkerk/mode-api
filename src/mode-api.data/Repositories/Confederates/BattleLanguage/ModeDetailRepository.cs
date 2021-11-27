@@ -1,7 +1,7 @@
-using mode_platonic_api.Domain;
-using mode_platonic_api.Domain.DomainModel.Confederates.BattleLanguage;
+using mode_api.Domain;
+using mode_api.Domain.DomainModel.Confederates.BattleLanguage;
 
-namespace mode_platonic_api.data.Repositories.Confederates.BattleLanguage
+namespace mode_api.data.Repositories.Confederates.BattleLanguage
 {
     public class ModeDetailRepository : BaseRepository<ModeDetail>, IModeDetailRepository
     {
