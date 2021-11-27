@@ -27,6 +27,14 @@ $replacements."NamePlatonic" = "Name";
 $replacements."namePlatonic" = "name";
 $replacements."mode-detail-platonic" = "mode-detail";
 $replacements."mode_detail_platonic" = "mode_detail";
+
+$replacements."contextDetailPlatonic" = "contextDetail"; 
+$replacements."ContextDetailPlatonic" = "ContextDetail"; 
+$replacements."NameContextDetailPlatonic" = "Name";
+$replacements."nameContextDetailPlatonic" = "name";
+$replacements."context-detail-platonic" = "context-detail";
+$replacements."context_detail_platonic" = "context_detail";
+
 $replacements."BattleLanguagePlatonic" = "BattleLanguage";
 $replacements."mode-platonic-api" = "mode-api";
 $replacements."mode_platonic_api" = "mode_api";

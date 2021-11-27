@@ -3,7 +3,7 @@
 namespace mode_platonic_api.data
 {
     [Migration(1)]
-    public class CreateTables : ForwardOnlyMigration
+    public class CreateTablesModeDetailPlatonic : ForwardOnlyMigration
     {
         public override void Up()
         {

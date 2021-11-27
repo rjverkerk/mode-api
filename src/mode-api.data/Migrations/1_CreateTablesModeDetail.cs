@@ -3,7 +3,7 @@ using FluentMigrator;
 namespace mode_api.data
 {
     [Migration(1)]
-    public class CreateTables : ForwardOnlyMigration
+    public class CreateTablesModeDetail : ForwardOnlyMigration
     {
         public override void Up()
         {
