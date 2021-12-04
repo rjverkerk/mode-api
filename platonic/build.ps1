@@ -29,7 +29,7 @@ $replacements."mode-detail-platonic" = "mode-detail";
 $replacements."mode_detail_platonic" = "mode_detail";
 $replacements."BattleLanguagePlatonic" = "BattleLanguage";
 $replacements."mode-platonic-api" = "mode-api";
-$replacements."mode_platonic_api" = "mode_api";
+$replacements."mode_platonic" = "mode";
  
 
 foreach ($file in Get-Files)
