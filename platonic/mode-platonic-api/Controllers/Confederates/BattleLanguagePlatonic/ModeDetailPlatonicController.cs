@@ -15,7 +15,7 @@ namespace mode_platonic_api.Controllers.Confederates.BattleLanguagePlatonic
         { 
             _modeDetailPlatonicService = modeDetailPlatonicService; }
         
-        [HttpGet] public async Task<ActionResult<ModeDetailPlatonicResponse>> SearchAsync() 
+        [HttpGet] public async Task<ActionResult> SearchAsync() 
         { 
             var response = await _modeDetailPlatonicService.SearchByCriteria(); 
             return Ok(response); 
@@ -23,9 +23,9 @@ namespace mode_platonic_api.Controllers.Confederates.BattleLanguagePlatonic
 
         [HttpGet] 
         [Route("/mode-detail-platonic/{id}")] 
-        public async Task<ActionResult<ModeDetailPlatonicItem>> GetAsync(Guid id) 
+        public async Task<ActionResult> GetAsync(Guid id) 
         { 
-            var modeDetailPlatonic = await _modeDetailPlatonicService.GetById(id); 
+            var modeDetailPlatonic = await _modeDetailPlatonicService.GetByExternalId(id); 
             if ( modeDetailPlatonic == null ) 
             { 
                 return NotFound(); 
@@ -33,22 +33,23 @@ namespace mode_platonic_api.Controllers.Confederates.BattleLanguagePlatonic
             return Ok(modeDetailPlatonic); 
         }
 
-        [HttpDelete] 
-        public async Task<ActionResult> Delete(IEnumerable<Guid> ids) 
+        [HttpDelete]
+        [Route("/mode-detail-platonic/{id}")]
+        public async Task<ActionResult> Delete(Guid id) 
         {
-            await _modeDetailPlatonicService.Delete(ids); 
-            return Ok(); 
+            var result = await _modeDetailPlatonicService.Delete(id); 
+            return Ok(result); 
         }
         
         [HttpPut] 
         [Route("/mode-detail-platonic/{id}")] 
-        public async Task<ActionResult<ModeDetailPlatonicItem>> Update(Guid id, ModeDetailPlatonicUpsert modeDetailPlatonicToUpdate) 
+        public async Task<ActionResult> Update(Guid id, ModeDetailPlatonicUpsert modeDetailPlatonicToUpdate) 
         { 
             var modeDetailPlatonic = await _modeDetailPlatonicService.Update(modeDetailPlatonicToUpdate, id); 
             return Ok(modeDetailPlatonic); 
         }
         [HttpPost] 
-        public async Task<ActionResult<ModeDetailPlatonicItem>> Post(ModeDetailPlatonicUpsert modeDetailPlatonicToCreate) 
+        public async Task<ActionResult> Post(ModeDetailPlatonicUpsert modeDetailPlatonicToCreate) 
         { 
             var modeDetailPlatonic = await _modeDetailPlatonicService.Create(modeDetailPlatonicToCreate); 
             return Ok(modeDetailPlatonic); 

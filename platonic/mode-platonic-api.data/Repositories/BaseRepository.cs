@@ -4,7 +4,6 @@ using mode_platonic_api.Domain.DomainModel.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace mode_platonic_api.data.Repositories
@@ -12,31 +11,37 @@ namespace mode_platonic_api.data.Repositories
     public class BaseRepository<T> : IBaseRepository<T> where T : AggregateRoot
     {
         protected readonly ApplicationContext _context;
+        private readonly DbSet<T> _items;
         public BaseRepository(ApplicationContext context) {
             _context = context;
+            _items = _context.Set<T>();
         }
+
         public void Add(T entity) {
-            _context.Set<T>().Add(entity);
+            _items.Add(entity);
         }
+
         public void AddRange(IEnumerable<T> entities) {
-            _context.Set<T>().AddRange(entities);
+            _items.AddRange(entities);
         }
-        public IQueryable<T> Find(Expression<Func<T, bool>> expression) {
-            return _context.Set<T>().Where(expression);
+
+        public async Task<IEnumerable<T>> GetAll() {
+            return await _items.ToListAsync();
         }
-        public IQueryable<T> GetAll() {
-            return _context.Set<T>();
+
+        public async Task<IEnumerable<T>> GetByExternalIds(IEnumerable<Guid> externalIds) {
+            return await _items.Where(x => externalIds.Contains(x.ExternalId))
+                               .ToListAsync();
         }
-        public IQueryable<T> GetByExternalId(Guid externalId) {
-            return _context.Set<T>()
-                .Where(x => x.ExternalId == externalId);
-        }
+
         public void Remove(T entity) {
-            _context.Set<T>().Remove(entity);
+            _items.Remove(entity);
         }
+
         public void RemoveRange(IEnumerable<T> entities) {
-            _context.Set<T>().RemoveRange(entities);
+            _items.RemoveRange(entities);
         }
+
         public async Task SaveAsync() {
             await _context.SaveChangesAsync();
         }

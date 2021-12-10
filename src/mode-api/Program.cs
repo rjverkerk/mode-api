@@ -25,6 +25,7 @@ namespace mode_api
                     .AddScoped<IModeDetailService, ModeDetailService>()
                     .AddScoped<IModeDetailRepository, ModeDetailRepository>()
                     .AddScoped<IRequestContext, MockRequestContext>()
+                    .AddScoped<ITimeProvider, TimeProvider>()
         );
     }
 }

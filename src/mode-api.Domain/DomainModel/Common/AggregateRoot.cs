@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace mode_api.Domain.DomainModel.Common
 {
-    public class AggregateRoot
+    public abstract class AggregateRoot
     {
         [Column("id")]
         public int Id { get; set; }
@@ -25,8 +25,13 @@ namespace mode_api.Domain.DomainModel.Common
 
         [Column("version")]
         public long Version { get; set; } = 1;
-        public void UpdateInternal() {
+
+        public AggregateRoot() {}
+
+        public void UpdateInternal(int actorId, DateTime modifiedDate) {
             Version = Version + 1;
+            LastModifiedBy = actorId;
+            LastModifiedDate = modifiedDate;
         }
 
     }

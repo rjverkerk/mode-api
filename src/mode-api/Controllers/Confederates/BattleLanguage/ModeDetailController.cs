@@ -15,7 +15,7 @@ namespace mode_api.Controllers.Confederates.BattleLanguage
         { 
             _modeDetailService = modeDetailService; }
         
-        [HttpGet] public async Task<ActionResult<ModeDetailResponse>> SearchAsync() 
+        [HttpGet] public async Task<ActionResult> SearchAsync() 
         { 
             var response = await _modeDetailService.SearchByCriteria(); 
             return Ok(response); 
@@ -23,9 +23,9 @@ namespace mode_api.Controllers.Confederates.BattleLanguage
 
         [HttpGet] 
         [Route("/mode-detail/{id}")] 
-        public async Task<ActionResult<ModeDetailItem>> GetAsync(Guid id) 
+        public async Task<ActionResult> GetAsync(Guid id) 
         { 
-            var modeDetail = await _modeDetailService.GetById(id); 
+            var modeDetail = await _modeDetailService.GetByExternalId(id); 
             if ( modeDetail == null ) 
             { 
                 return NotFound(); 
@@ -33,22 +33,23 @@ namespace mode_api.Controllers.Confederates.BattleLanguage
             return Ok(modeDetail); 
         }
 
-        [HttpDelete] 
-        public async Task<ActionResult> Delete(IEnumerable<Guid> ids) 
+        [HttpDelete]
+        [Route("/mode-detail/{id}")]
+        public async Task<ActionResult> Delete(Guid id) 
         {
-            await _modeDetailService.Delete(ids); 
-            return Ok(); 
+            var result = await _modeDetailService.Delete(id); 
+            return Ok(result); 
         }
         
         [HttpPut] 
         [Route("/mode-detail/{id}")] 
-        public async Task<ActionResult<ModeDetailItem>> Update(Guid id, ModeDetailUpsert modeDetailToUpdate) 
+        public async Task<ActionResult> Update(Guid id, ModeDetailUpsert modeDetailToUpdate) 
         { 
             var modeDetail = await _modeDetailService.Update(modeDetailToUpdate, id); 
             return Ok(modeDetail); 
         }
         [HttpPost] 
-        public async Task<ActionResult<ModeDetailItem>> Post(ModeDetailUpsert modeDetailToCreate) 
+        public async Task<ActionResult> Post(ModeDetailUpsert modeDetailToCreate) 
         { 
             var modeDetail = await _modeDetailService.Create(modeDetailToCreate); 
             return Ok(modeDetail); 

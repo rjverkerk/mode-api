@@ -9,9 +9,9 @@ namespace mode_api.Services.Confederates.BattleLanguage
     {
         Task<ModeDetailResponse> SearchByCriteria();
 
-        Task<ModeDetailItem> GetById(Guid id);
+        Task<ModeDetailItem> GetByExternalId(Guid externalId);
 
-        Task Delete(IEnumerable<Guid> externalIds);
+        Task<bool> Delete(Guid externalId);
 
         Task<ModeDetailItem> Update(ModeDetailUpsert modeDetail, Guid externalId);
 

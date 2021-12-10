@@ -9,9 +9,9 @@ namespace mode_platonic_api.Services.Confederates.BattleLanguagePlatonic
     {
         Task<ModeDetailPlatonicResponse> SearchByCriteria();
 
-        Task<ModeDetailPlatonicItem> GetById(Guid id);
+        Task<ModeDetailPlatonicItem> GetByExternalId(Guid externalId);
 
-        Task Delete(IEnumerable<Guid> externalIds);
+        Task<bool> Delete(Guid externalId);
 
         Task<ModeDetailPlatonicItem> Update(ModeDetailPlatonicUpsert modeDetailPlatonic, Guid externalId);
 

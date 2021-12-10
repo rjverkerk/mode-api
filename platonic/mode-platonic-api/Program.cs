@@ -25,6 +25,7 @@ namespace mode_platonic_api
                     .AddScoped<IModeDetailPlatonicService, ModeDetailPlatonicService>()
                     .AddScoped<IModeDetailPlatonicRepository, ModeDetailPlatonicRepository>()
                     .AddScoped<IRequestContext, MockRequestContext>()
+                    .AddScoped<ITimeProvider, TimeProvider>()
         );
     }
 }
