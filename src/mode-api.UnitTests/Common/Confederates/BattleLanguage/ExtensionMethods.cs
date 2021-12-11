@@ -6,11 +6,11 @@ namespace mode_api.UnitTests.Common.Confederates.BattleLanguage
 {
     public static class ExtensionMethods
     {
-        public static void Equals(this ModeDetail actual, ModeDetailUpsert expected) {
+        public static void AssertEqual(this ModeDetail actual, ModeDetailUpsert expected) {
             Assert.Equal(expected.Name, actual.Name);
         }
 
-        public static void Equals(this ModeDetail actual, ModeDetailItem expected) {
+        public static void AssertEqual(this ModeDetail actual, ModeDetailItem expected) {
             Assert.Equal(expected.Name, actual.Name);
             Assert.Equal(expected.CreatedBy, actual.CreatedBy);
             Assert.Equal(expected.CreatedDate, actual.CreatedDate);

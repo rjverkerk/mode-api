@@ -8,7 +8,6 @@ using mode_api.Services.Confederates.BattleLanguage;
 using Moq;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Xunit;
 
 namespace mode_api.UnitTests.Services.Confederates.BattleLanguage

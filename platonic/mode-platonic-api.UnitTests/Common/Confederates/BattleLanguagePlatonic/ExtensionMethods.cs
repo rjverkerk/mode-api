@@ -6,11 +6,11 @@ namespace mode_platonic_api.UnitTests.Common.Confederates.BattleLanguagePlatonic
 {
     public static class ExtensionMethods
     {
-        public static void Equals(this ModeDetailPlatonic actual, ModeDetailPlatonicUpsert expected) {
+        public static void AssertEqual(this ModeDetailPlatonic actual, ModeDetailPlatonicUpsert expected) {
             Assert.Equal(expected.NamePlatonic, actual.NamePlatonic);
         }
 
-        public static void Equals(this ModeDetailPlatonic actual, ModeDetailPlatonicItem expected) {
+        public static void AssertEqual(this ModeDetailPlatonic actual, ModeDetailPlatonicItem expected) {
             Assert.Equal(expected.NamePlatonic, actual.NamePlatonic);
             Assert.Equal(expected.CreatedBy, actual.CreatedBy);
             Assert.Equal(expected.CreatedDate, actual.CreatedDate);
