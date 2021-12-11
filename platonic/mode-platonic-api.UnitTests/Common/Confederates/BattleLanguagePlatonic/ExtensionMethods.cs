@@ -18,5 +18,10 @@ namespace mode_platonic_api.UnitTests.Common.Confederates.BattleLanguagePlatonic
             Assert.Equal(expected.LastModifiedBy, actual.LastModifiedBy);
             Assert.Equal(expected.LastModifiedDate, actual.LastModifiedDate);
         }
+
+        public static void AssertEqual(this ModeDetailPlatonic actual, ModeDetailPlatonicDto expected) {
+            Assert.Equal(expected.NamePlatonic, actual.NamePlatonic);
+            Assert.Equal(expected.ExternalId, actual.ExternalId);
+        }
     }
 }

@@ -28,7 +28,7 @@ namespace mode_api.Domain.DomainModel.Common
 
         public AggregateRoot() {}
 
-        public void UpdateInternal(int actorId, DateTime modifiedDate) {
+        protected void UpdateInternal(int actorId, DateTime modifiedDate) {
             Version = Version + 1;
             LastModifiedBy = actorId;
             LastModifiedDate = modifiedDate;

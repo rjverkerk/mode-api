@@ -18,5 +18,10 @@ namespace mode_api.UnitTests.Common.Confederates.BattleLanguage
             Assert.Equal(expected.LastModifiedBy, actual.LastModifiedBy);
             Assert.Equal(expected.LastModifiedDate, actual.LastModifiedDate);
         }
+
+        public static void AssertEqual(this ModeDetail actual, ModeDetailDto expected) {
+            Assert.Equal(expected.Name, actual.Name);
+            Assert.Equal(expected.ExternalId, actual.ExternalId);
+        }
     }
 }
