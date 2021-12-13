@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>mode_api.UnitTests</RootNamespace>
+    <RootNamespace>mode_canonical_api.UnitTests</RootNamespace>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\mode-api\mode-api.csproj" />
+    <ProjectReference Include="..\mode-canonical-api\mode-canonical-api.csproj" />
   </ItemGroup>
 
 </Project>

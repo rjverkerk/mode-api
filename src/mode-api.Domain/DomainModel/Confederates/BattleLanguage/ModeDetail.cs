@@ -4,27 +4,28 @@ using mode_api.Domain.DomainModel.Common;
 
 namespace mode_api.Domain.DomainModel.Confederates.BattleLanguage
 {
-    [Table("mode_detail")]
-    public class ModeDetail : AggregateRoot
+  [Table("mode_detail")]
+  public class ModeDetail : AggregateRoot
+  {
+    [Column("name")]
+    public string Name { get; set; }
+
+    public ModeDetail() { }
+
+    public ModeDetail(ModeDetailDto dto, DateTime createdDate)
     {
-        [Column("name_platonic")]
-        public string Name { get; set; }
-
-        public ModeDetail() {}
-
-        public ModeDetail(ModeDetailDto dto, DateTime createdDate)
-        {
-            ExternalId = dto.ExternalId;
-            Name = dto.Name;
-            CreatedBy = dto.ActorId;
-            CreatedDate = createdDate;
-        }
-
-        public ModeDetail Update(ModeDetailDto dto, DateTime modifiedDate) {
-            Name = dto.Name;
-            UpdateInternal(dto.ActorId, modifiedDate);
-
-            return this;
-        }
+      ExternalId = dto.ExternalId;
+      Name = dto.Name;
+      CreatedBy = dto.ActorId;
+      CreatedDate = createdDate;
     }
+
+    public ModeDetail Update(ModeDetailDto dto, DateTime modifiedDate)
+    {
+      Name = dto.Name;
+      UpdateInternal(dto.ActorId, modifiedDate);
+
+      return this;
+    }
+  }
 }
