@@ -35,7 +35,7 @@
         }
       }
     },
-    "/mode-detail-canonical/{id}": {
+    "/mode-detail-canonicals/{id}": {
       "get": {
         "tags": [
           "ModeDetailCanonical"
@@ -173,7 +173,7 @@
         }
       }
     },
-    "/mode-detail-canonical": {
+    "/mode-detail-canonicals": {
       "post": {
         "tags": [
           "ModeDetailCanonical"

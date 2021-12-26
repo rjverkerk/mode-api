@@ -7,7 +7,7 @@ using mode_canonical_api.Services.Confederates.BattleLanguageCanonical;
 namespace mode_canonical_api.Controllers.Confederates.BattleLanguageCanonical 
 {
     [ApiController]
-    [Route("mode-detail-canonical")]
+    [Route("mode-detail-canonicals")]
     public class ModeDetailCanonicalController : ControllerBase 
     {
         private readonly IModeDetailCanonicalService _modeDetailCanonicalService; 

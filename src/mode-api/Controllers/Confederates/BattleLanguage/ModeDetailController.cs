@@ -7,7 +7,7 @@ using mode_api.Services.Confederates.BattleLanguage;
 namespace mode_api.Controllers.Confederates.BattleLanguage 
 {
     [ApiController]
-    [Route("mode-detail")]
+    [Route("mode-details")]
     public class ModeDetailController : ControllerBase 
     {
         private readonly IModeDetailService _modeDetailService; 

@@ -2,15 +2,23 @@ $dest = "C:\Source\mode-api\src";
 
 cd C:\Source\mode-api\canonical;
 
+Write-Host "Create folder:" -ForegroundColor Green;
+
 New-Item -ItemType Directory -Force -Path $dest
 
 Remove-Item –path "$($dest)\*" –Recurse -Force
 
-Copy-Item ./* -Destination ../src -Exclude build.ps1,README.md -Recurse -Verbose
+Write-Host "Removed existing files." -ForegroundColor Green;
+
+Copy-Item ./* -Destination ../src -Exclude build.ps1,README.md -Recurse
+
+Write-Host "Copied files." -ForegroundColor Green;
 
 Get-ChildItem ../src/* -Recurse |
 Where-Object{$_.FullName -like "*\obj\*" -or $_.FullName -like "*\bin\*"} |
-Remove-Item -Recurse -Verbose
+Remove-Item -Recurse
+
+Write-Host "Removed build directories." -ForegroundColor Green;
 
 function Get-Files {
     return Get-ChildItem $dest -Recurse -File |
@@ -47,5 +55,7 @@ foreach ($file in Get-Files)
 }
 
 foreach ($r in $replacements.GetEnumerator()) {
-    Get-Items | Where {$_.Name -clike "*$($r.Name)*"} | Rename-Item -NewName { $_.name -creplace $r.Name, $r.Value} -verbose
+    Get-Items | Where {$_.Name -clike "*$($r.Name)*"} | Rename-Item -NewName { $_.name -creplace $r.Name, $r.Value}
 }
+
+Write-Host "Performed string replacements." -ForegroundColor Green;

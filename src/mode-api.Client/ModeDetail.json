@@ -35,7 +35,7 @@
         }
       }
     },
-    "/mode-detail/{id}": {
+    "/mode-details/{id}": {
       "get": {
         "tags": [
           "ModeDetail"
@@ -173,7 +173,7 @@
         }
       }
     },
-    "/mode-detail": {
+    "/mode-details": {
       "post": {
         "tags": [
           "ModeDetail"
