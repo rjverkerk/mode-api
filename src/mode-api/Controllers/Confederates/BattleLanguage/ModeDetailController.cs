@@ -16,14 +16,14 @@ namespace mode_api.Controllers.Confederates.BattleLanguage
             _modeDetailService = modeDetailService;
         }
         
-        [HttpGet] public async Task<ActionResult<ModeDetailResponse>> SearchAsync() 
+        [HttpGet("/search", Name = nameof(SearchAsync))]
+        public async Task<ActionResult<ModeDetailResponse>> SearchAsync() 
         { 
             var response = await _modeDetailService.SearchByCriteria(); 
             return Ok(response);
         }
 
-        [HttpGet] 
-        [Route("/mode-detail/{id}")] 
+        [HttpGet("{id}", Name = nameof(GetByExternalIdAsync))]
         public async Task<ActionResult<ModeDetailItem>> GetByExternalIdAsync(Guid id) 
         { 
             var modeDetail = await _modeDetailService.GetByExternalId(id); 
@@ -34,16 +34,14 @@ namespace mode_api.Controllers.Confederates.BattleLanguage
             return Ok(modeDetail); 
         }
 
-        [HttpDelete]
-        [Route("/mode-detail/{id}")]
+        [HttpDelete("{id}", Name = nameof(DeleteAsync))]
         public async Task<ActionResult<bool>> DeleteAsync(Guid id) 
         {
             var result = await _modeDetailService.Delete(id); 
             return Ok(result); 
         }
         
-        [HttpPut] 
-        [Route("/mode-detail/{id}")] 
+        [HttpPut("{id}", Name = nameof(UpdateAsync))]
         public async Task<ActionResult<ModeDetailItem>> UpdateAsync(Guid id, ModeDetailUpsert modeDetailToUpdate) 
         { 
             var modeDetail = await _modeDetailService.Update(modeDetailToUpdate, id); 
@@ -53,9 +51,10 @@ namespace mode_api.Controllers.Confederates.BattleLanguage
                 return NotFound();
             }
 
-            return Ok(modeDetail); 
+            return Ok(modeDetail);
         }
-        [HttpPost] 
+
+        [HttpPost(Name = nameof(CreateAsync))] 
         public async Task<ActionResult<ModeDetailItem>> CreateAsync(ModeDetailUpsert modeDetailToCreate) 
         { 
             var modeDetail = await _modeDetailService.Create(modeDetailToCreate); 

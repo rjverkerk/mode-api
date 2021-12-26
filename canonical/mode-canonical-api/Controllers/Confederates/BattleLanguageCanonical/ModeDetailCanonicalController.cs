@@ -16,14 +16,14 @@ namespace mode_canonical_api.Controllers.Confederates.BattleLanguageCanonical
             _modeDetailCanonicalService = modeDetailCanonicalService;
         }
         
-        [HttpGet] public async Task<ActionResult<ModeDetailCanonicalResponse>> SearchAsync() 
+        [HttpGet("/search", Name = nameof(SearchAsync))]
+        public async Task<ActionResult<ModeDetailCanonicalResponse>> SearchAsync() 
         { 
             var response = await _modeDetailCanonicalService.SearchByCriteria(); 
             return Ok(response);
         }
 
-        [HttpGet] 
-        [Route("/mode-detail-canonical/{id}")] 
+        [HttpGet("{id}", Name = nameof(GetByExternalIdAsync))]
         public async Task<ActionResult<ModeDetailCanonicalItem>> GetByExternalIdAsync(Guid id) 
         { 
             var modeDetailCanonical = await _modeDetailCanonicalService.GetByExternalId(id); 
@@ -34,16 +34,14 @@ namespace mode_canonical_api.Controllers.Confederates.BattleLanguageCanonical
             return Ok(modeDetailCanonical); 
         }
 
-        [HttpDelete]
-        [Route("/mode-detail-canonical/{id}")]
+        [HttpDelete("{id}", Name = nameof(DeleteAsync))]
         public async Task<ActionResult<bool>> DeleteAsync(Guid id) 
         {
             var result = await _modeDetailCanonicalService.Delete(id); 
             return Ok(result); 
         }
         
-        [HttpPut] 
-        [Route("/mode-detail-canonical/{id}")] 
+        [HttpPut("{id}", Name = nameof(UpdateAsync))]
         public async Task<ActionResult<ModeDetailCanonicalItem>> UpdateAsync(Guid id, ModeDetailCanonicalUpsert modeDetailCanonicalToUpdate) 
         { 
             var modeDetailCanonical = await _modeDetailCanonicalService.Update(modeDetailCanonicalToUpdate, id); 
@@ -53,9 +51,10 @@ namespace mode_canonical_api.Controllers.Confederates.BattleLanguageCanonical
                 return NotFound();
             }
 
-            return Ok(modeDetailCanonical); 
+            return Ok(modeDetailCanonical);
         }
-        [HttpPost] 
+
+        [HttpPost(Name = nameof(CreateAsync))] 
         public async Task<ActionResult<ModeDetailCanonicalItem>> CreateAsync(ModeDetailCanonicalUpsert modeDetailCanonicalToCreate) 
         { 
             var modeDetailCanonical = await _modeDetailCanonicalService.Create(modeDetailCanonicalToCreate); 
