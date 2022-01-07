@@ -16,7 +16,7 @@ namespace mode_api.Controllers.Confederates.BattleLanguage
             _modeDetailService = modeDetailService;
         }
         
-        [HttpGet("/search", Name = nameof(SearchAsync))]
+        [HttpGet("search", Name = nameof(SearchAsync))]
         public async Task<ActionResult<ModeDetailResponse>> SearchAsync() 
         { 
             var response = await _modeDetailService.SearchByCriteria(); 

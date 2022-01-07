@@ -5,7 +5,7 @@
     "version": "v1"
   },
   "paths": {
-    "/search": {
+    "/mode-details/search": {
       "get": {
         "tags": [
           "ModeDetail"

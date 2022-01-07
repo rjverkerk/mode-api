@@ -16,7 +16,7 @@ namespace mode_canonical_api.Controllers.Confederates.BattleLanguageCanonical
             _modeDetailCanonicalService = modeDetailCanonicalService;
         }
         
-        [HttpGet("/search", Name = nameof(SearchAsync))]
+        [HttpGet("search", Name = nameof(SearchAsync))]
         public async Task<ActionResult<ModeDetailCanonicalResponse>> SearchAsync() 
         { 
             var response = await _modeDetailCanonicalService.SearchByCriteria(); 

@@ -5,7 +5,7 @@
     "version": "v1"
   },
   "paths": {
-    "/search": {
+    "/mode-detail-canonicals/search": {
       "get": {
         "tags": [
           "ModeDetailCanonical"
