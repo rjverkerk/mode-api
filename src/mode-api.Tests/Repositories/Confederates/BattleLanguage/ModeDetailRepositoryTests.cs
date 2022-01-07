@@ -110,7 +110,7 @@ namespace mode_api.Tests.Repositories.Confederates.BattleLanguage
 
                 var result = await sut.GetAll();
 
-                Assert.True(result.SequenceEqual(expected, new ModeDetailComparer()));
+                Assert.True(result.OrderBy(x => x.Order).SequenceEqual(expected.OrderBy(x => x.Order), new ModeDetailComparer()));
 
                 return result;
             }

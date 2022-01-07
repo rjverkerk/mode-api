@@ -26,11 +26,13 @@ namespace mode_api.data.Repositories
         }
 
         public async Task<IEnumerable<T>> GetAll() {
-            return await _items.ToListAsync();
+            return await _items.OrderBy(x => x.Order)
+                               .ToListAsync();
         }
 
         public async Task<IEnumerable<T>> GetByExternalIds(IEnumerable<Guid> externalIds) {
             return await _items.Where(x => externalIds.Contains(x.ExternalId))
+                               .OrderBy(x => x.Order)
                                .ToListAsync();
         }
 
