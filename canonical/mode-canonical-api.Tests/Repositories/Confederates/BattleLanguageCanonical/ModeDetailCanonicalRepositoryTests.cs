@@ -110,7 +110,7 @@ namespace mode_canonical_api.Tests.Repositories.Confederates.BattleLanguageCanon
 
                 var result = await sut.GetAll();
 
-                Assert.True(result.SequenceEqual(expected, new ModeDetailCanonicalComparer()));
+                Assert.True(result.OrderBy(x => x.Order).SequenceEqual(expected.OrderBy(x => x.Order), new ModeDetailCanonicalComparer()));
 
                 return result;
             }
