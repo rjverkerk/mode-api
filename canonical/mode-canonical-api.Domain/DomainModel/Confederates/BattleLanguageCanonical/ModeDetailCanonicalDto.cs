@@ -8,12 +8,15 @@ namespace mode_canonical_api.Domain.DomainModel.Confederates.BattleLanguageCanon
 
         public string NameCanonical { get; set; }
 
+        public int Order { get; set; }
+
         public int ActorId { get; set; }
 
-        public ModeDetailCanonicalDto(Guid externalId, string nameCanonical, int actorId)
+        public ModeDetailCanonicalDto(Guid externalId, string nameCanonical, int order, int actorId)
         {
             ExternalId = externalId;
             NameCanonical = nameCanonical;
+            Order = order;
             ActorId = actorId;
         }
     }

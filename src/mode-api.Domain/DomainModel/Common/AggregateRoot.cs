@@ -23,6 +23,9 @@ namespace mode_api.Domain.DomainModel.Common
         [Column("modified_date")]
         public DateTime? LastModifiedDate { get; set; }
 
+        [Column("order")]
+        public int Order { get; set; }
+
         [Column("version")]
         public long Version { get; set; } = 1;
 

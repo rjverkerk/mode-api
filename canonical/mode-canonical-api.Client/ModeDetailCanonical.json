@@ -254,6 +254,10 @@
             "format": "date-time",
             "nullable": true
           },
+          "order": {
+            "type": "integer",
+            "format": "int32"
+          },
           "version": {
             "type": "integer",
             "format": "int64"
@@ -280,6 +284,10 @@
           "nameCanonical": {
             "type": "string",
             "nullable": true
+          },
+          "order": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false

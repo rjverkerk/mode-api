@@ -8,6 +8,7 @@ namespace mode_canonical_api.Tests.Common.Confederates.BattleLanguageCanonical
     {
         public static void AssertEqual(this ModeDetailCanonical actual, ModeDetailCanonicalUpsert expected) {
             Assert.Equal(expected.NameCanonical, actual.NameCanonical);
+            Assert.Equal(expected.Order, actual.Order);
         }
 
         public static void AssertEqual(this ModeDetailCanonical actual, ModeDetailCanonicalItem expected) {
@@ -15,17 +16,20 @@ namespace mode_canonical_api.Tests.Common.Confederates.BattleLanguageCanonical
             Assert.Equal(expected.CreatedBy, actual.CreatedBy);
             Assert.Equal(expected.CreatedDate, actual.CreatedDate);
             Assert.Equal(expected.Id, actual.ExternalId);
+            Assert.Equal(expected.Order, actual.Order);
             Assert.Equal(expected.LastModifiedBy, actual.LastModifiedBy);
             Assert.Equal(expected.LastModifiedDate, actual.LastModifiedDate);
         }
 
         public static void AssertEqual(this ModeDetailCanonical actual, ModeDetailCanonicalDto expected) {
             Assert.Equal(expected.NameCanonical, actual.NameCanonical);
+            Assert.Equal(expected.Order, actual.Order);
             Assert.Equal(expected.ExternalId, actual.ExternalId);
         }
 
         public static void AssertEqual(this ModeDetailCanonicalItem actual, ModeDetailCanonicalUpsert expected) {
             Assert.Equal(expected.NameCanonical, actual.NameCanonical);
+            Assert.Equal(expected.Order, actual.Order);
         }
     }
 }

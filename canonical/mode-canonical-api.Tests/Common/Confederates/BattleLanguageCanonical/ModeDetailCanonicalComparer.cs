@@ -11,6 +11,7 @@ namespace mode_canonical_api.Tests.Common.Confederates.BattleLanguageCanonical
                 x.CreatedDate == y.CreatedDate &&
                 x.LastModifiedBy == y.LastModifiedBy &&
                 x.LastModifiedDate == y.LastModifiedDate &&
+                x.Order == y.Order &&
                 x.NameCanonical == y.NameCanonical) 
             {
                 return true;

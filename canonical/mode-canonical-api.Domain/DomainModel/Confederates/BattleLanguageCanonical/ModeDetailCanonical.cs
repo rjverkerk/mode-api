@@ -14,18 +14,20 @@ namespace mode_canonical_api.Domain.DomainModel.Confederates.BattleLanguageCanon
 
     public ModeDetailCanonical(ModeDetailCanonicalDto dto, DateTime createdDate)
     {
-      ExternalId = dto.ExternalId;
-      NameCanonical = dto.NameCanonical;
-      CreatedBy = dto.ActorId;
-      CreatedDate = createdDate;
-    }
+        ExternalId = dto.ExternalId;
+        NameCanonical = dto.NameCanonical;
+        Order = dto.Order;
+        CreatedBy = dto.ActorId;
+        CreatedDate = createdDate;
+     }
 
     public ModeDetailCanonical Update(ModeDetailCanonicalDto dto, DateTime modifiedDate)
     {
-      NameCanonical = dto.NameCanonical;
-      UpdateInternal(dto.ActorId, modifiedDate);
+        NameCanonical = dto.NameCanonical;
+        Order = dto.Order;
+        UpdateInternal(dto.ActorId, modifiedDate);
 
-      return this;
+        return this;
     }
   }
 }

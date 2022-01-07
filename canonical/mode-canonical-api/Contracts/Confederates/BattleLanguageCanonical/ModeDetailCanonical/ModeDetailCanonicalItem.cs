@@ -16,6 +16,8 @@ namespace mode_canonical_api.Contracts.Confederates.BattleLanguageCanonical.Mode
 
         public DateTime? LastModifiedDate { get; set; }
 
+        public int Order { get; set; }
+
         public long Version { get; set; }
     }
 }

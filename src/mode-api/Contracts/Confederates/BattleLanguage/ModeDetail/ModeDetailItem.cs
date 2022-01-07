@@ -16,6 +16,8 @@ namespace mode_api.Contracts.Confederates.BattleLanguage.ModeDetail
 
         public DateTime? LastModifiedDate { get; set; }
 
+        public int Order { get; set; }
+
         public long Version { get; set; }
     }
 }

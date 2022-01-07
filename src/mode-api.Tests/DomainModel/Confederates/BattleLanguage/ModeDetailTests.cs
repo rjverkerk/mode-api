@@ -27,16 +27,18 @@ namespace mode_api.Tests.DomainModel.Confederates.BattleLanguage
             string name, 
             DateTime modifiedDate,
             int modifiedBy,
+            int order,
             ModeDetail sut) {
 
             var previousVersion = sut.Version;
-            var dto = new ModeDetailDto(sut.ExternalId, name, modifiedBy);
+            var dto = new ModeDetailDto(sut.ExternalId, name, order, modifiedBy);
 
             sut.Update(dto, modifiedDate);
 
             sut.AssertEqual(dto);
             Assert.Equal(dto.ActorId, sut.LastModifiedBy);
             Assert.Equal(modifiedDate, sut.LastModifiedDate);
+            Assert.Equal(order, sut.Order);
             Assert.Equal(previousVersion + 1, sut.Version);
         }
     }

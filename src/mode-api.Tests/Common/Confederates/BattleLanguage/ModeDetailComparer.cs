@@ -11,6 +11,7 @@ namespace mode_api.Tests.Common.Confederates.BattleLanguage
                 x.CreatedDate == y.CreatedDate &&
                 x.LastModifiedBy == y.LastModifiedBy &&
                 x.LastModifiedDate == y.LastModifiedDate &&
+                x.Order == y.Order &&
                 x.Name == y.Name) 
             {
                 return true;

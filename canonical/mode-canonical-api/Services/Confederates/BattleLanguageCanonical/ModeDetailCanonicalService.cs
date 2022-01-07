@@ -74,7 +74,8 @@ namespace mode_canonical_api.Services.Confederates.BattleLanguageCanonical
             modeDetailCanonicalToUpdate.Update(
                 new ModeDetailCanonicalDto(
                     modeDetailCanonicalToUpdate.ExternalId, 
-                    modeDetailCanonical.NameCanonical, 
+                    modeDetailCanonical.NameCanonical,
+                    modeDetailCanonical.Order,
                     _context.UserId
                     ), _timeProvider.UTCNow());
 
@@ -86,7 +87,8 @@ namespace mode_canonical_api.Services.Confederates.BattleLanguageCanonical
         public async Task<ModeDetailCanonicalItem> Create(ModeDetailCanonicalUpsert modeDetailCanonical) {
             var dto = new ModeDetailCanonicalDto(
                 Guid.NewGuid(), 
-                modeDetailCanonical.NameCanonical, 
+                modeDetailCanonical.NameCanonical,
+                modeDetailCanonical.Order,
                 _context.UserId);
 
             var modeDetailCanonicalToCreate = new ModeDetailCanonical(dto, _timeProvider.UTCNow());

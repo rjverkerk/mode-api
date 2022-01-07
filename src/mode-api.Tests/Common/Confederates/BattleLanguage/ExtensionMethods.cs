@@ -8,6 +8,7 @@ namespace mode_api.Tests.Common.Confederates.BattleLanguage
     {
         public static void AssertEqual(this ModeDetail actual, ModeDetailUpsert expected) {
             Assert.Equal(expected.Name, actual.Name);
+            Assert.Equal(expected.Order, actual.Order);
         }
 
         public static void AssertEqual(this ModeDetail actual, ModeDetailItem expected) {
@@ -15,17 +16,20 @@ namespace mode_api.Tests.Common.Confederates.BattleLanguage
             Assert.Equal(expected.CreatedBy, actual.CreatedBy);
             Assert.Equal(expected.CreatedDate, actual.CreatedDate);
             Assert.Equal(expected.Id, actual.ExternalId);
+            Assert.Equal(expected.Order, actual.Order);
             Assert.Equal(expected.LastModifiedBy, actual.LastModifiedBy);
             Assert.Equal(expected.LastModifiedDate, actual.LastModifiedDate);
         }
 
         public static void AssertEqual(this ModeDetail actual, ModeDetailDto expected) {
             Assert.Equal(expected.Name, actual.Name);
+            Assert.Equal(expected.Order, actual.Order);
             Assert.Equal(expected.ExternalId, actual.ExternalId);
         }
 
         public static void AssertEqual(this ModeDetailItem actual, ModeDetailUpsert expected) {
             Assert.Equal(expected.Name, actual.Name);
+            Assert.Equal(expected.Order, actual.Order);
         }
     }
 }

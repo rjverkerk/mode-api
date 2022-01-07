@@ -15,7 +15,8 @@ namespace mode_canonical_api.data
           .WithColumn("created_date").AsDateTime().NotNullable()
           .WithColumn("modified_by").AsInt32().Nullable()
           .WithColumn("modified_date").AsDateTime().Nullable()
+          .WithColumn("order").AsInt32().NotNullable()
           .WithColumn("version").AsInt64().NotNullable();
-    }
+        }
   }
 }

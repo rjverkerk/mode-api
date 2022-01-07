@@ -14,18 +14,20 @@ namespace mode_api.Domain.DomainModel.Confederates.BattleLanguage
 
     public ModeDetail(ModeDetailDto dto, DateTime createdDate)
     {
-      ExternalId = dto.ExternalId;
-      Name = dto.Name;
-      CreatedBy = dto.ActorId;
-      CreatedDate = createdDate;
-    }
+        ExternalId = dto.ExternalId;
+        Name = dto.Name;
+        Order = dto.Order;
+        CreatedBy = dto.ActorId;
+        CreatedDate = createdDate;
+     }
 
     public ModeDetail Update(ModeDetailDto dto, DateTime modifiedDate)
     {
-      Name = dto.Name;
-      UpdateInternal(dto.ActorId, modifiedDate);
+        Name = dto.Name;
+        Order = dto.Order;
+        UpdateInternal(dto.ActorId, modifiedDate);
 
-      return this;
+        return this;
     }
   }
 }

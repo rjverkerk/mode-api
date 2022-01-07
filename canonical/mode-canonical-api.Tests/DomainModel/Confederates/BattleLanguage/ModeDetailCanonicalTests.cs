@@ -27,16 +27,18 @@ namespace mode_canonical_api.Tests.DomainModel.Confederates.BattleLanguage
             string nameCanonical, 
             DateTime modifiedDate,
             int modifiedBy,
+            int order,
             ModeDetailCanonical sut) {
 
             var previousVersion = sut.Version;
-            var dto = new ModeDetailCanonicalDto(sut.ExternalId, nameCanonical, modifiedBy);
+            var dto = new ModeDetailCanonicalDto(sut.ExternalId, nameCanonical, order, modifiedBy);
 
             sut.Update(dto, modifiedDate);
 
             sut.AssertEqual(dto);
             Assert.Equal(dto.ActorId, sut.LastModifiedBy);
             Assert.Equal(modifiedDate, sut.LastModifiedDate);
+            Assert.Equal(order, sut.Order);
             Assert.Equal(previousVersion + 1, sut.Version);
         }
     }

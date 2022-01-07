@@ -74,7 +74,8 @@ namespace mode_api.Services.Confederates.BattleLanguage
             modeDetailToUpdate.Update(
                 new ModeDetailDto(
                     modeDetailToUpdate.ExternalId, 
-                    modeDetail.Name, 
+                    modeDetail.Name,
+                    modeDetail.Order,
                     _context.UserId
                     ), _timeProvider.UTCNow());
 
@@ -86,7 +87,8 @@ namespace mode_api.Services.Confederates.BattleLanguage
         public async Task<ModeDetailItem> Create(ModeDetailUpsert modeDetail) {
             var dto = new ModeDetailDto(
                 Guid.NewGuid(), 
-                modeDetail.Name, 
+                modeDetail.Name,
+                modeDetail.Order,
                 _context.UserId);
 
             var modeDetailToCreate = new ModeDetail(dto, _timeProvider.UTCNow());
